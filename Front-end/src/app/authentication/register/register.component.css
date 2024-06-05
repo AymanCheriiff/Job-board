@@ -1,0 +1,39 @@
+.container{
+  display: flex;
+  height: 100vb;
+}
+
+.form-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  padding: 25px;
+  gap: 25px;
+}
+
+.input-form{
+  width: 450px;
+}
+
+.input-submit{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.img-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+img{
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+  width: 100%;
+}

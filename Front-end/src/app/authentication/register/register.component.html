@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="img-container">
+    <img src="assets/authenticate.jpg">
+  </div>
+  <div class="form-container" *ngIf="!authenticated">
+    <h1>Create New Account</h1>
+    <div class="alert alert-danger w-100 d-flex flex-column" *ngIf="errors.length != 0">
+      <span *ngFor="let msg of errors">{{ msg }}</span>
+    </div>
+    <div class="input-form">
+      <label class="form-label">firstName :</label>
+      <input class="form-control" [(ngModel)]="registerRequest.firstName">
+    </div>
+    <div class="input-form">
+      <label class="form-label">lastName :</label>
+      <input class="form-control" [(ngModel)]="registerRequest.lastName">
+    </div>
+    <div class="input-form">
+      <label class="form-label">email :</label>
+      <input class="form-control" type="email" [(ngModel)]="registerRequest.email">
+    </div>
+    <div class="input-form">
+      <label class="form-label">password :</label>
+      <input class="form-control" type="password" [(ngModel)]="registerRequest.password">
+    </div>
+    <div class="input-form">
+      <label class="form-label">account type :</label>
+      <select class="form-select" (change)="selectRole($event)">
+        <option>choose account type</option>
+        <option value="EMPLOYEE">employee</option>
+        <option value="JOB_SEEKER">job seeker</option>
+      </select>
+    </div>
+    <div class="input-submit">
+      <button class="btn btn-primary" (click)="register()">
+        register <i class="bi bi-check ms-2"></i>
+      </button>
+    </div>
+  </div>
+  <div class="form-container" *ngIf="authenticated">
+    <span class="alert alert-success">Your request sent with success!</span>
+    <h1>Account confirmation code <br> has been sent to your email</h1>
+  </div>
+</div>

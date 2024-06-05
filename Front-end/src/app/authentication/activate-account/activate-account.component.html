@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="form-container">
+    <h1>Account Activation</h1>
+    <div class="alert alert-info" *ngIf="!accountActivated">
+      We have sent a verification code to your email address. Please check your inbox and paste the code in the input
+      field below to activate your account.
+    </div>
+    <div class="alert alert-danger" *ngIf="errors.length != 0">
+      <span *ngFor="let msg of errors">{{ msg }}</span>
+    </div>
+    <div class="alert alert-success text-center" *ngIf="accountActivated">
+      <span>Votre compte est activé</span>
+    </div>
+    <div class="form-input" *ngIf="!accountActivated">
+      <div class="d-flex align-items-center">
+        <input class="form-control" type="text" [(ngModel)]="code[0]" (input)="pasteCodeFromFirst($event)">
+        <input class="form-control ms-2" type="text" readonly [(ngModel)]="code[1]">
+        <input class="form-control ms-2" type="text" readonly [(ngModel)]="code[2]">
+        <input class="form-control ms-2" type="text" readonly [(ngModel)]="code[3]">
+        <input class="form-control ms-2" type="text" readonly [(ngModel)]="code[4]">
+        <input class="form-control ms-2" type="text" readonly [(ngModel)]="code[5]">
+        <input class="form-control ms-2" type="text" readonly [(ngModel)]="code[6]">
+        <input class="form-control ms-2" type="text" readonly [(ngModel)]="code[7]">
+      </div>
+      <div class="d-flex justify-content-end mt-2">
+        <button class="btn btn-primary" (click)="activateAccount()">
+          submit <i class="bi bi-lock-fill ms-2"></i>
+        </button>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-2" *ngIf="accountActivated">
+      <button class="btn btn-primary" (click)="navigateToLogin()">
+        login
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+@import url('https://fonts.cdnfonts.com/css/fira-sans-extra-condensed');
+
+.container-fluid{
+  padding: 0;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+
+.navbar-brand{
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  margin-left: 25px;
+  font-size: 1.7rem;
+}
+
+.navbar-brand span{
+  padding: 3px 12px;
+  background-color: #001F3F;
+  color: white;
+  margin-left: 6px;
+  border-radius: 3px;
+}
+
+.nav-item{
+  list-style: none;
+  color: #001F3F !important;
+  font-weight: 600 !important;
+  font-size: 1.3rem;
+}
+
+.headline{
+  width: 100%;
+  height: 91%;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  background-image: url("../../../assets/job serach.png");
+  background-size: cover;
+}
+
+.btn-primary{
+  background-color: #001F3F;
+  border-color: #001F3F;
+  text-transform: uppercase;
+  padding: 6px 22px;
+}
