@@ -1,0 +1,30 @@
+
+.container-fluid{
+  box-shadow: 0 0 3px rgba(1, 99, 199, 0.11);
+  background-color: #fbfbfb;
+}
+
+.nav-item {
+  list-style: none;
+  margin-left: 50px;
+  font-size: 2rem;
+}
+
+.bi:hover {
+  color: #004f94;
+  cursor: pointer;
+}
+
+.navbar-brand{
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  margin-left: 25px;
+  font-size: 1.7rem;
+}
+
+.navbar-brand span{
+  padding: 3px 12px;
+  background-color: #001F3F;
+  color: white;
+  margin-left: 6px;
+  border-radius: 3px;
+}

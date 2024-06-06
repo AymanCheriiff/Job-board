@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth/auth.service";
 import {AuthenticationRequest} from "../../model/AuthenticationRequest";
 import {Router} from "@angular/router";
@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   templateUrl: './authenticate.component.html',
   styleUrls: ['./authenticate.component.css']
 })
-export class AuthenticateComponent {
+export class AuthenticateComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private router: Router) {
@@ -24,6 +24,7 @@ export class AuthenticateComponent {
     this.authService.authenticate(this.authenticationRequest).subscribe({
       next: (res) => {
         sessionStorage.setItem("token", res.token);
+        this.router.navigate(['user'])
       }, error: (err) => {
         err.error.validationErrors.map((error: Error) => this.errors.push(error))
       }
@@ -32,5 +33,11 @@ export class AuthenticateComponent {
 
   public navigateToCreateAccount() {
     this.router.navigate(['register'])
+  }
+
+  ngOnInit() {
+    if (sessionStorage.getItem('token')) {
+      this.router.navigate(['user'])
+    }
   }
 }
