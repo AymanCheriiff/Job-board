@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -46,6 +47,9 @@ public class User implements UserDetails, Principal {
     private LocalDateTime lastModifiedDate;
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles;
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<JobPost> jobPosts;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
