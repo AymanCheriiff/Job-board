@@ -38,7 +38,8 @@ public class User implements UserDetails, Principal {
     private String password;
     private boolean enabled;
     private boolean accountLocked;
-
+    @Column(name = "image", length = 999999999)
+    private String image;
     @CreatedDate
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdDate;

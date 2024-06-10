@@ -1,0 +1,164 @@
+.container-fluid {
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
+.right-bar {
+  border-left: 1px solid rgba(0, 31, 63, 0.2);
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 100px 25px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.list {
+  margin-top: auto;
+}
+
+.left-bar {
+  border-right: 1px solid rgba(0, 31, 63, 0.2);
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 100px 25px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding-top: 250px;
+  background: #fcfcfc;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.content-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background: #fcfcfc;
+  padding: 50px;
+}
+
+.new_post {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  color: #004f94;
+  width: 100%;
+  padding: 50px 0;
+  margin-top: 1024px;
+}
+
+.new_post_form {
+  background-color: white;
+  width: 800px;
+  margin: auto;
+  border-radius: 3px;
+  padding: 18px;
+  box-shadow: 0 0 3px rgba(0, 79, 148, 0.2);
+}
+
+.new_post_form_header {
+  margin-bottom: 25px;
+}
+
+.new_post_form_footer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 12px 0px;
+  width: 100%;
+}
+
+.new_post_form_footer span {
+  border: 1px solid rgba(0, 31, 63, 0.2);
+  background-color: transparent;
+  padding: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.form_post {
+  width: 100%;
+  border: 1px solid #004f94;
+  background-color: #fbfbfb;
+  padding: 12px;
+}
+
+.form_post:focus {
+  outline: none;
+}
+
+h3 {
+  margin: 0 !important;
+}
+
+.job_post {
+  width: 800px;
+  height: fit-content !important;
+  box-shadow: 0 0 3px rgba(0, 79, 148, 0.2);
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.job_post_header {
+  display: flex;
+  align-items: center;
+  height: 75px !important;
+  padding: 12px;
+  border-bottom: 1px solid rgba(0, 31, 63, 0.2);
+  gap: 12px;
+}
+
+.job_post_header img {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+}
+
+.job_post_body {
+  padding: 25px;
+}
+
+.job_post_body img {
+  width: 100%;
+}
+
+.job_post_footer {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-top: 1px solid rgba(0, 31, 63, 0.2);
+}
+
+.job_post_footer span {
+  background-color: #001F3F;
+  color: white;
+  padding: 12px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-primary{
+  background-color: #004f94;
+}

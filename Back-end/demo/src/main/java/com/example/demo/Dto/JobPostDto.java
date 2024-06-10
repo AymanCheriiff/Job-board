@@ -14,6 +14,7 @@ public class JobPostDto {
     private String description;
     private String title;
     private String image;
+    private String video;
     private UserDto user;
     private IndustryDto industry;
 }

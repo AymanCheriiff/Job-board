@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="left-bar"></div>
+  <div class="container">
+    <div class="new_post">
+      <div class="new_post_form">
+        <div class="new_post_form_header">
+          <span>Create new job post</span>
+        </div>
+        <input class="form_post mb-2" type="text" placeholder="Title" [(ngModel)]="job_post.title">
+        <textarea class="form_post" type="text" placeholder="Type whats on your mind" cols="6" rows="6"
+                  [(ngModel)]="job_post.description"></textarea>
+        <div class="new_post_form_footer">
+          <span><i class="bi bi-image-fill"></i> upload image</span>
+          <input type="file" class="form-control" width="150px" (change)="handleFileInput($event)">
+          <span><i class="bi bi-file-earmark-arrow-down-fill"></i> upload file</span>
+          <div class="d-flex justify-content-end w-50">
+            <button class="btn btn-primary" (click)="saveJobPost()">submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-scroll">
+      <div class="job_post" *ngFor="let post of job_posts">
+        <div class="job_post_header">
+          <img [src]="getImageUrl(post.image)">
+          <span style="font-weight: 700; font-size: 18px">Ayman Cherif</span>
+          <span class="ms-auto">07/06/2024 7:04 pm</span>
+        </div>
+        <div class="job_post_body">
+          <h4>{{ post.title }}: </h4>
+          <p>
+            {{ post.description }}
+          </p>
+          <img [src]="getImageUrl(post.image)">
+        </div>
+        <div class="job_post_footer">
+          <span>Apply for job</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-bar">
+    <h3>Contact</h3>
+    <ul class="list">
+      <li class="list-item">
+        <img src="">
+        <span>Ayman Cherif</span>
+      </li>
+    </ul>
+  </div>
+</div>

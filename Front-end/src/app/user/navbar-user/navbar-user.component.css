@@ -2,6 +2,8 @@
 .container-fluid{
   box-shadow: 0 0 3px rgba(1, 99, 199, 0.11);
   background-color: #fbfbfb;
+  position: fixed;
+  top: 0;
 }
 
 .nav-item {

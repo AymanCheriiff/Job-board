@@ -31,21 +31,22 @@ public class JwtFilter extends OncePerRequestFilter {
                                     @NonNull HttpServletResponse response,
                                     @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
-        if(request.getServletPath().contains("/auth/")) {
+        if(request.getServletPath().contains("/auth")) {
             filterChain.doFilter(request, response);
             return;
         }
+
         final String authHeader = request.getHeader(AUTHORIZATION);
         final String jwt;
         final String userEmail;
-        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+        if (authHeader == null || !authHeader.startsWith("Bearer ")){
             filterChain.doFilter(request, response);
             return;
         }
         jwt = authHeader.substring(7);
-        userEmail = jwtService.extractUserName(jwt);
-
+        userEmail = jwtService.extractUserEmail(jwt);
         if(userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            System.out.println(userEmail);
             UserDetails userDetails = userDetailsService.loadUserByUsername(userEmail);
             if (jwtService.isTokenValid(jwt, userDetails)) {
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
